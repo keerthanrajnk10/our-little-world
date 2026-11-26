@@ -1,0 +1,9 @@
+{
+  "name": "Our Little World",
+  "short_name": "Our World",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff5f8",
+  "theme_color": "#f9dce8",
+  "description": "A personal five-page love story with your own words, photos and video."
+}

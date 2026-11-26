@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f9dce8"><link rel="manifest" href="manifest.json">
+<title>Our Little World 💗</title>
+<style>
+:root{--rose:#c85f88;--ink:#74435a}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#fffafd,#fbe6ee 65%,#f8dce8);color:var(--ink);font-family:Georgia,serif}
+button,input,textarea{font:inherit}.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fff8fbee;backdrop-filter:blur(10px);border-bottom:1px solid #f2d8e2}.brand{color:#a84d73}.actions{display:flex;gap:8px}.small,.next{border:0;border-radius:24px;padding:10px 15px;background:#f3d3df;color:#8f4565;cursor:pointer}.next{background:linear-gradient(135deg,#d96f96,#bf527e);color:white;padding:13px 24px;min-width:170px;box-shadow:0 5px 15px #c65b8428}
+.dots{display:flex;justify-content:center;gap:7px;padding:15px}.dot{width:8px;height:8px;border-radius:9px;background:#e8c3d1}.dot.on{width:24px;background:var(--rose)}
+main{width:min(100% - 26px,720px);margin:8px auto 30px}.page{display:none;min-height:calc(100vh - 140px);padding:clamp(18px,4vw,34px);background:#fffafcdd;border:1px solid white;border-radius:27px;box-shadow:0 18px 50px #a84f7020;overflow:hidden}.page.on{display:flex;flex-direction:column;animation:in .4s ease}@keyframes in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.kicker{text-align:center;text-transform:uppercase;letter-spacing:.18em;font:600 10px Arial;color:#c17b96}h1,h2{text-align:center;font-weight:normal;color:#a84d73;line-height:1.2}h1{font-size:clamp(2.2rem,8vw,3.7rem);margin:10px 0}h2{font-size:clamp(1.8rem,6vw,2.7rem);margin:8px 0 20px}p{font-size:1.08rem;line-height:1.8;white-space:pre-wrap}.center{text-align:center}
+.cover{width:min(100%,420px);height:clamp(220px,48vh,390px);object-fit:cover;border-radius:22px;margin:12px auto 18px;background:#f7e3eb;box-shadow:0 12px 30px #9e567022}
+.nav{display:flex;justify-content:center;margin-top:auto;padding-top:22px}.editor{display:none;background:#fff0f5;border:1px solid #f0cbd9;border-radius:17px;padding:14px;margin-top:15px}body.editing .editor{display:block}.editor label{display:block;font:600 12px Arial;color:#a34e73;margin:10px 0 5px}.editor textarea,.editor input[type=text]{width:100%;border:1px solid #e8bfd0;border-radius:11px;padding:11px;background:white;color:#63364d}.editor textarea{min-height:90px;resize:vertical}.editor input[type=file]{width:100%;font:13px Arial}.hint{font:12px Arial;color:#a7778b}
+.twothoughts{min-height:410px}.corner{width:clamp(110px,28vw,185px);height:clamp(110px,28vw,185px);object-fit:cover;border:7px solid white;border-radius:17px;box-shadow:0 8px 24px #99516b24;background:#f8e4ec}.top{float:right;margin:0 0 16px 16px;transform:rotate(3deg)}.bottom{float:left;margin:16px 16px 0 0;transform:rotate(-3deg)}.thought{font-size:clamp(1rem,3.5vw,1.2rem);line-height:1.9;min-height:210px}
+.videowrap{width:100%;max-width:560px;min-height:220px;margin:8px auto 16px;background:#f8e8ef;border-radius:20px;overflow:hidden;display:grid;place-items:center}.videowrap video{width:100%;max-height:58vh}.placeholder{text-align:center;padding:35px;color:#b27a92;line-height:1.8}
+.points{list-style:none;padding:0}.points li{padding:13px 15px 13px 42px;margin:10px 0;background:#fff1f6;border:1px solid #f5dce6;border-radius:15px;position:relative;line-height:1.5}.points li:before{content:"♥";position:absolute;left:16px;color:#d66d94}
+.thanks{font-size:clamp(1.1rem,4vw,1.3rem);line-height:2;text-align:center;margin:auto 0}.note{text-align:center;font:11px Arial;color:#ba8a9e}
+@media(max-width:480px){.bar{padding:10px}.small{padding:9px 11px}.page{padding:20px 16px}.corner{width:110px;height:110px}}
+</style></head><body>
+<header class="bar"><div class="brand">♡ Our Little World</div><div class="actions"><button class="small" id="edit">✎ Edit our pages</button><button class="small" id="save">Save</button></div></header>
+<div class="dots"><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<main>
+<section class="page on">
+<div class="kicker">A little story, made just for you</div><h1 id="title1">To my favourite person 💗</h1><img class="cover" id="image1" alt="Your chosen photo" hidden>
+<p class="center" id="caption1">A little place for all the things I want you to know.</p>
+<div class="editor"><label>Page title</label><input id="e-title1" type="text"><label>Choose image</label><input id="f-image1" type="file" accept="image/*"><label>Line under image</label><textarea id="e-caption1"></textarea></div>
+<div class="nav"><button class="next">Turn the page →</button></div></section>
+<section class="page">
+<div class="kicker">Things my heart wants to say</div><h2 id="title2">A few thoughts about you</h2>
+<div class="twothoughts"><img class="corner top" id="image2a" alt="Upper right memory" hidden><p class="thought" id="thoughts">Write everything you want her to know — what you admire, the little things you notice, and how she makes your world brighter.</p><img class="corner bottom" id="image2b" alt="Lower left memory" hidden><div style="clear:both"></div></div>
+<div class="editor"><label>Heading</label><input id="e-title2" type="text"><label>Your thoughts</label><textarea id="e-thoughts"></textarea><label>Upper-right image</label><input id="f-image2a" type="file" accept="image/*"><label>Lower-left image</label><input id="f-image2b" type="file" accept="image/*"></div>
+<div class="nav"><button class="next">A little video →</button></div></section>
+<section class="page">
+<div class="kicker">A moment to replay</div><h2 id="title3">One little memory 🎞️</h2><div class="videowrap" id="videowrap"><div class="placeholder">Your favourite video will live here.<br>Choose one in Edit mode. ♡</div></div><p class="center" id="videoCaption">Some moments deserve to be watched more than once.</p>
+<div class="editor"><label>Heading</label><input id="e-title3" type="text"><label>Choose a video</label><input id="f-video" type="file" accept="video/*"><label>Line under video</label><textarea id="e-videoCaption"></textarea><p class="hint">Choose a short video for easier loading.</p></div>
+<div class="nav"><button class="next">A few things I love →</button></div></section>
+<section class="page">
+<div class="kicker">Little things, big feelings</div><h2 id="title4">Things I adore about you</h2><ul class="points" id="points"></ul>
+<div class="editor"><label>Heading</label><input id="e-title4" type="text"><label>Your points (one per line)</label><textarea id="e-points"></textarea></div>
+<div class="nav"><button class="next">One last thing →</button></div></section>
+<section class="page">
+<div class="kicker">From the bottom of my heart</div><h2 id="title5">Thank you for being you 💞</h2><p class="thanks" id="thanks">Thank you for every smile, every little moment, and every memory we are making. I hope you always know how loved and appreciated you are. This little story is just one way of saying how much you mean to me.</p>
+<div class="editor"><label>Final heading</label><input id="e-title5" type="text"><label>Your thank-you message</label><textarea id="e-thanks"></textarea></div>
+<div class="nav"><button class="next" id="again">Read our story again ↺</button></div><p class="note">Made with love, just for you. ♡</p></section>
+</main>
+<script>
+const $=id=>document.getElementById(id), pages=[...document.querySelectorAll('.page')],dots=[...document.querySelectorAll('.dot')];let page=0;
+function go(n){page=(n+5)%5;pages.forEach((p,i)=>p.classList.toggle('on',i===page));dots.forEach((d,i)=>d.classList.toggle('on',i===page));scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('.next').forEach((b,i)=>b.addEventListener('click',()=>go(i===4?0:page+1)));
+$('edit').onclick=()=>{document.body.classList.toggle('editing');$('edit').textContent=document.body.classList.contains('editing')?'✓ Finish editing':'✎ Edit our pages';};
+const keys=['title1','caption1','title2','thoughts','title3','videoCaption','title4','points','title5','thanks'];
+const defaults={title1:'To my favourite person 💗',caption1:'A little place for all the things I want you to know.',title2:'A few thoughts about you',thoughts:'Write everything you want her to know — what you admire, the little things you notice, and how she makes your world brighter.',title3:'One little memory 🎞️',videoCaption:'Some moments deserve to be watched more than once.',title4:'Things I adore about you',points:'Your beautiful smile\\nThe way you make ordinary days special\\nYour kindness and your heart\\nSimply being you',title5:'Thank you for being you 💞',thanks:'Thank you for every smile, every little moment, and every memory we are making. I hope you always know how loved and appreciated you are. This little story is just one way of saying how much you mean to me.'};
+const ids={title1:'e-title1',caption1:'e-caption1',title2:'e-title2',thoughts:'e-thoughts',title3:'e-title3',videoCaption:'e-videoCaption',title4:'e-title4',points:'e-points',title5:'e-title5',thanks:'e-thanks'};
+function render(k,v){if(k==='points'){$('points').innerHTML='';v.split('\\n').filter(x=>x.trim()).forEach(x=>{let li=document.createElement('li');li.textContent=x.trim();$('points').append(li);});}else $(k).textContent=v;}
+keys.forEach(k=>{let v=localStorage.getItem('olw_'+k)??defaults[k];$(ids[k]).value=v;render(k,v);});
+$('save').onclick=()=>{keys.forEach(k=>{let v=$(ids[k]).value;localStorage.setItem('olw_'+k,v);render(k,v);});$('save').textContent='Saved ✓';setTimeout(()=>$('save').textContent='Save',1400);};
+let dbp=new Promise((res,rej)=>{let r=indexedDB.open('OurLittleWorldMedia',1);r.onupgradeneeded=()=>r.result.createObjectStore('media');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});
+async function store(k,f){let d=await dbp;return new Promise((res,rej)=>{let t=d.transaction('media','readwrite');t.objectStore('media').put(f,k);t.oncomplete=res;t.onerror=()=>rej(t.error);});}
+async function fetchFile(k){let d=await dbp;return new Promise((res,rej)=>{let r=d.transaction('media').objectStore('media').get(k);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+let urls=[];async function loadImg(k,id){let f=await fetchFile(k);if(f){let u=URL.createObjectURL(f);urls.push(u);$(id).src=u;$(id).hidden=false;}}
+async function loadVideo(){let f=await fetchFile('video');if(f){let u=URL.createObjectURL(f);urls.push(u);$('videowrap').innerHTML='';let v=document.createElement('video');v.src=u;v.controls=true;v.playsInline=true;v.preload='metadata';$('videowrap').append(v);}}
+[['f-image1','image1','image'],['f-image2a','image2a','image'],['f-image2b','image2b','image'],['f-video','video','video']].forEach(([input,key,type])=>$(input).addEventListener('change',async e=>{let f=e.target.files[0];if(!f||!f.type.startsWith(type+'/'))return;await store(key,f);if(type==='image')await loadImg(key,key);else await loadVideo();}));
+loadImg('image1','image1');loadImg('image2a','image2a');loadImg('image2b','image2b');loadVideo();
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>
